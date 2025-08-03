@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDEM - AUTENTICAÇÃO DE TERMINAL</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d0d0d;
+            color: #ccc; /* Cor principal um pouco menos vibrante para um tom corporativo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-shadow: 0 0 3px rgba(204, 204, 204, 0.2);
+            overflow: hidden;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 5px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .login-container {
+            background-color: rgba(10, 10, 10, 0.5);
+            padding: 40px;
+            border: 1px solid #555; /* Borda mais sutil */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            width: 400px;
+            animation: fadeIn 1s ease-out;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 15px;
+        }
+
+        p {
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #ccc;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .input-field::placeholder {
+            color: #666;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #00aaff; /* Um azul para indicar seleção */
+            box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #00aaff;
+            color: #000;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+        }
+
+        #error-message {
+            color: #ff3b30;
+            margin-top: 15px;
+            font-size: 14px;
+            height: 20px;
+            text-shadow: 0 0 5px #ff3b30;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Terminal Seguro</h1>
+        <p>ORDEM - PROTOCOLO DE AUTENTICAÇÃO</p>
+        
+        <form id="login-form">
+            <input type="text" id="username-input" class="input-field" placeholder="ID DE USUÁRIO" required>
+            <input type="password" id="password-input" class="input-field" placeholder="SENHA DE ACESSO" required>
+            <button type="submit">INICIAR SESSÃO</button>
+        </form>
+
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        // --- CREDENCIAIS DE ACESSO RESTRITO ---
+
+        // 1. Defina o usuário e senha corretos aqui
+        const usuarioCorreto = "E.VANCE";
+        const senhaCorreta = "LotusH@rmony77";
+
+        // 2. Defina o nome da página de conteúdo
+        const proximaPagina = "terminal.html";
+
+        const form = document.getElementById('login-form');
+        const usernameInput = document.getElementById('username-input');
+        const passwordInput = document.getElementById('password-input');
+        const errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const usuarioDigitado = usernameInput.value.toUpperCase(); // Converte para maiúsculas para não diferenciar
+            const senhaDigitada = passwordInput.value;
+
+            if (usuarioDigitado === usuarioCorreto && senhaDigitada === senhaCorreta) {
+                // Se correto, redireciona
+                window.location.href = proximaPagina;
+            } else {
+                // Se errado, mostra erro e limpa campos
+                errorMessage.textContent = ">> CREDENCIAIS INVÁLIDAS. ACESSO NEGADO. <<";
+                usernameInput.value = "";
+                passwordInput.value = "";
+                usernameInput.focus();
+            }
+        });
+    </script>
+
+</body>
+</html>
