@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIÁRIO DE BORDO [AUTODESTRUIÇÃO IMINENTE]</title>
+    <style>
+        /* --- ANIMAÇÕES --- */
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+        @keyframes blink-warning {
+            50% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+        @keyframes cursor-blink {
+            50% { opacity: 0; }
+        }
+
+        /* --- ESTILOS GERAIS --- */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d0d0d;
+            color: #ccc;
+            margin: 0;
+            padding: 30px;
+            text-shadow: 0 0 3px rgba(204, 204, 204, 0.2);
+            animation: fadeIn 1s;
+        }
+
+        .log-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px dashed #555;
+            padding: 20px 30px;
+            background-color: rgba(10, 10, 10, 0.2);
+        }
+
+        .log-header, .log-section {
+            margin-bottom: 25px;
+        }
+        
+        /* --- ESTILOS DO CONTEÚDO --- */
+        
+        /* Cabeçalho do arquivo */
+        #file-header {
+            color: #00aaff;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        /* Alerta de autodestruição */
+        #destruct-warning {
+            color: #ff3b30;
+            text-shadow: 0 0 8px #ff3b30;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid #ff3b30;
+            padding: 10px;
+            margin: 20px 0;
+            animation: blink-warning 1.8s infinite;
+        }
+        
+        /* Título do documento */
+        #doc-title {
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        
+        /* Títulos das partes */
+        h3 {
+            color: #00aaff;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        
+        p {
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #fff;
+        }
+
+        /* A pista final, com destaque máximo */
+        #final-clue {
+            margin-top: 40px;
+            padding: 25px;
+            border: 2px solid #00e5ff; /* Ciano brilhante da "cura" */
+            color: #00e5ff;
+            text-shadow: 0 0 10px #00e5ff;
+            font-size: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Cursor piscando para o efeito de digitação */
+        .cursor {
+            animation: cursor-blink 1s infinite;
+            font-weight: bold;
+            color: #fff;
+            display: inline-block; /* Garante que a animação funcione bem */
+        }
+    </style>
+</head>
+<body>
+    <div class="log-container">
+        <div class="log-header">
+            <h1 id="file-header"></h1>
+            <p id="destruct-warning"></p>
+        </div>
+
+        <article>
+            <h2 id="doc-title"></h2>
+            
+            <section class="log-section">
+                <h3 id="part1-title"></h3>
+                <p id="part1-p1"></p>
+                <p id="part1-p2"></p>
+            </section>
+
+            <section class="log-section">
+                <h3 id="part2-title"></h3>
+                <p id="part2-p1"></p>
+                <p id="part2-p2"></p>
+                <p id="part2-p3"></p>
+            </section>
+            
+            <section class="log-section">
+                <h3 id="part3-title"></h3>
+                <p id="part3-p1"></p>
+                <p id="part3-p2"></p>
+                <blockquote id="final-clue"></blockquote>
+            </section>
+        </article>
+
+    </div>
+
+    <script>
+        // --- EFEITO DE DIGITAÇÃO PARA IMERSÃO ---
+
+        // Mapeamento dos elementos e do texto a ser digitado
+        const content = [
+            { el: '#file-header', text: '[ ARQUIVO DE DADOS PESSOAIS - E.VANCE - ACESSO RESTRITO ]' },
+            { el: '#destruct-warning', text: '// PERIGO: ESTE ARQUIVO SE AUTODESTRUIRÁ APÓS LEITURA. MEMORIZE. //' },
+            { el: '#doc-title', text: 'A Anomalia - Reflexões Sobre uma Vacina para a Alma' },
+            { el: '#part1-title', text: 'PARTE 1: A FALHA DA CONTENÇÃO CIENTÍFICA' },
+            { el: '#part1-p1', text: 'Minhas tentativas de criar um contra-protocolo puramente científico falharam. A Contrafrequência "Ressonância-Delta" que desenvolvi pode desestabilizar a matriz sônica do "Silenciador", mas o efeito é temporário. O antídoto químico, Composto "Reconexina-A7", consegue estimular a produção de ocitocina, mas age como um analgésico, não como uma cura.' },
+            { el: '#part1-p2', text: 'A Ordem pode simplesmente reaplicar o Protocolo Harmonia. Eles são um sistema, e um sistema não é derrotado com uma única solução. A cura não está em reverter o dano, mas em criar algo que o dano não possa tocar. A resposta não estava na química, mas na única variável que eu subestimei: a anomalia.' },
+            { el: '#part2-title', text: 'PARTE 2: A DESCOBERTA DA "ÂNCORA MNEMÔNICA"' },
+            { el: '#part2-p1', text: 'A "Anomalia" foi o Casal 7B. Eles resistiram ao protocolo 37% mais tempo que a média. Por quê? A genética não explicava. A fisiologia não explicava. A resposta estava em suas memórias. Ao analisar seus relatos pré-experimento, notei que o vínculo deles não era sustentado por grandes gestos, mas por uma memória específica, recorrente e multissensorial: a lembrança da primeira vez que montaram juntos um complexo modelo de telescópio, peça por peça, numa noite chuvosa.' },
+            { el: '#part2-p2', text: 'Foi quando eu entendi. O Protocolo Harmonia não apaga a memória, ele cria um "ruído" neurológico que impede o cérebro de acessar a emoção atrelada a ela. É como tentar ouvir uma música com estática altíssima.' },
+            { el: '#part2-p3', text: 'A cura, a verdadeira vacina contra a Ordem Cinzenta, não é um antídoto químico, mas sim uma "Âncora Mnemônica". Uma memória tão poderosa, específica e carregada de emoção que atua como um farol no meio da névoa química e do ruído sônico. Uma lembrança tão forte que o sistema não consegue suprimir, pois ela está codificada em várias partes do cérebro: visão, tato, som, sentimento de conquista...' },
+            { el: '#part3-title', text: 'PARTE 3: O PROTÓTIPO E A ESPERANÇA FINAL' },
+            { el: '#part3-p1', text: 'Eles acham que estou tentando criar uma arma. Eu estou tentando criar um escudo. Uma prova de conceito.' },
+            { el: '#part3-p2', text: 'Antes de fugir, eu criei e escondi um protótipo da minha teoria. Uma representação física e simbólica de uma "Âncora Mnemônica". Não é apenas um objeto; é a materialização da ideia de que o amor mais forte é aquele que se constrói, com paciência, cuidado e com as próprias mãos.' },
+            { el: '#final-clue', text: '"A cura para um mundo que desmorona está onde o futuro é montado, peça por peça."' },
+        ];
+        
+        // Função que simula a digitação
+        function typeWriter(element, text, speed) {
+            return new Promise(resolve => {
+                let i = 0;
+                const cursor = '<span class="cursor">|</span>';
+                element.innerHTML = cursor;
+
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML = text.substring(0, i + 1) + cursor;
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        // Mantém o cursor no final, mas sem piscar para não distrair
+                        element.innerHTML = text; 
+                        resolve();
+                    }
+                }
+                type();
+            });
+        }
+
+        // Função assíncrona para orquestrar a digitação em sequência
+        async function revealContent() {
+            const typingSpeed = 15; // Velocidade da digitação (milisegundos)
+            for (const item of content) {
+                const element = document.querySelector(item.el);
+                await typeWriter(element, item.text, typingSpeed);
+                await new Promise(resolve => setTimeout(resolve, 200)); // Pequena pausa entre os parágrafos
+            }
+        }
+
+        // Inicia o processo quando a página carrega
+        window.onload = revealContent;
+    </script>
+</body>
+</html>
