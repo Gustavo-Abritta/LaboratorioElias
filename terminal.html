@@ -70,74 +70,38 @@
         
         /* --- MELHORIAS ESPECÍFICAS --- */
         
-        /* Ícone de alerta piscando */
-        .blinking-icon {
-            animation: blink-warning 1.3s infinite;
-            margin-right: 8px;
-            font-size: 20px;
-            vertical-align: middle;
-        }
-
-        /* Cores dos alertas */
+        .blinking-icon { animation: blink-warning 1.3s infinite; margin-right: 8px; font-size: 20px; vertical-align: middle; }
         .alert-text { color: #ff3b30; text-shadow: 0 0 5px #ff3b30; font-weight: bold; }
         .urgent-text { color: #ff9500; text-shadow: 0 0 5px #ff9500; }
-
-        /* Status dos experimentos */
-        .status-text {
-            color: #888;
-            font-style: italic;
-            margin-left: 10px;
-            font-size: 14px;
-        }
+        .status-text { color: #888; font-style: italic; margin-left: 10px; font-size: 14px; }
         
-        /* Lista de arquivos */
         ul.file-list { list-style-type: none; padding-left: 0; }
-        .file-list li {
-            padding: 6px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+        .file-list li { padding: 6px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .file-list li::before { content: '>> '; color: #00aaff; }
         
-        /* Links falsos para os arquivos */
-        .fake-link {
-            color: inherit;
-            text-decoration: none;
-            cursor: help;
-            transition: all 0.2s;
-        }
-        .fake-link:hover {
-            background-color: #00aaff;
-            color: #000;
-            padding: 2px 4px;
-        }
+        .fake-link { color: inherit; text-decoration: none; cursor: help; transition: all 0.2s; }
+        .fake-link:hover { background-color: #00aaff; color: #000; padding: 2px 4px; }
         
         .alert-file .fake-link { color: #ff9500; font-weight: bold; }
         .alert-file .fake-link:hover { background-color: #ff9500; color: #000; }
         
-        /* Metadados dos arquivos (tamanho, data) */
-        .file-meta { font-size: 14px; color: #777; margin-left: 15px; }
+        /* NOVO: Estilo para o arquivo da CURA */
+        .cure-file .fake-link {
+            color: #00e5ff; /* Ciano brilhante */
+            font-weight: bold;
+            text-shadow: 0 0 8px #00e5ff;
+        }
+        .cure-file .fake-link:hover {
+            background-color: #00e5ff;
+            color: #000;
+        }
 
+        .file-meta { font-size: 14px; color: #777; margin-left: 15px; }
         .system-comment { font-size: 13px; color: #888; font-style: italic; text-align: right; max-width: 50%; padding-left: 10px;}
 
-        /* Rodapé do terminal */
-        .terminal-footer {
-            border-top: 1px dashed #555;
-            padding-top: 10px;
-            margin-top: 30px;
-            font-size: 12px;
-            color: #888;
-            text-align: right;
-        }
+        .terminal-footer { border-top: 1px dashed #555; padding-top: 10px; margin-top: 30px; font-size: 12px; color: #888; text-align: right; }
         
-        /* Cursor piscando cosmético */
-        .cursor {
-            animation: cursor-blink 1.2s infinite;
-            font-weight: bold;
-            color: #fff;
-        }
+        .cursor { animation: cursor-blink 1.2s infinite; font-weight: bold; color: #fff; }
 
     </style>
 </head>
@@ -189,7 +153,11 @@
                 <li><a href="#" class="fake-link">dados_inducao_sonica_rev2.dat</a> <span class="file-meta">(Tamanho: 118 MB)</span></li>
                 <li class="alert-file">
                     <span><a href="#" class="fake-link">ALERTA_DESVIO_ETICO_PROTOCOLOHARMONIA.txt</a></span>
-                    <span class="system-comment">As objeções morais levantadas pelo Dr. Vance sobre o 'assassinato da alma' foram consideradas uma anomalia emocional e um sintoma de falha em sua própria harmonização. Ele foi reclassificado como uma 'variável de risco' para o projeto.</span>
+                    <span class="system-comment">As objeções morais levantadas pelo Dr. Vance sobre o 'assassinato da alma' foram consideradas uma anomalia emocional... Ele foi reclassificado como uma 'variável de risco' para o projeto.</span>
+                </li>
+                <li class="cure-file">
+                    <a href="cura.html" target="_blank" class="fake-link">PROTOCOLO_REVERSAO_LOTUS.antidote</a>
+                    <span class="file-meta">(Descoberta Recente)</span>
                 </li>
             </ul>
         </div>
