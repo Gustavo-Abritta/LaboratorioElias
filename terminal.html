@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMINAL SEGURO - DR. E. VANCE</title>
+    <style>
+        /* Estilo herdado da tela de login, com adaptações */
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+        @keyframes type-in {
+            from { width: 0; } to { width: 100%; }
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d0d0d;
+            color: #ccc;
+            margin: 0;
+            padding: 30px;
+            text-shadow: 0 0 3px rgba(204, 204, 204, 0.2);
+            animation: fadeIn 1s;
+        }
+
+        .terminal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 1px solid #444;
+            padding: 20px;
+            background-color: rgba(10, 10, 10, 0.5);
+        }
+
+        .header-section, .section {
+            margin-bottom: 35px;
+            border-left: 3px solid #00aaff;
+            padding-left: 15px;
+        }
+
+        h2 {
+            background-color: #00aaff;
+            color: #000;
+            padding: 5px 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        p, li {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        strong {
+            color: #fff;
+        }
+
+        .alert-text, .urgent-text {
+            color: #ff3b30;
+            text-shadow: 0 0 5px #ff3b30;
+            font-weight: bold;
+        }
+        .urgent-text {
+            color: #ff9500; /* Laranja para URGENTE */
+            text-shadow: 0 0 5px #ff9500;
+        }
+
+        h3 {
+            color: #fff;
+            border-bottom: 1px dashed #555;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        li::before {
+            content: '>> ';
+            color: #00aaff;
+        }
+        
+        .file-list li {
+            padding: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .alert-file {
+            color: #ff9500;
+            font-weight: bold;
+        }
+        
+        .system-comment {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+            text-align: right;
+            max-width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+
+        <div class="header-section">
+            <p>> BEM-VINDO AO TERMINAL SEGURO DA ORDEM</p>
+            <p>> Autenticação bem-sucedida. <strong>Usuário:</strong> Dr. Elias Vance.</p>
+            <p>> <strong>Nível de Acesso:</strong> Cientista Chefe, Divisão de Estabilidade Afetiva.</p>
+        </div>
+
+        <div class="section" id="alerts">
+            <h2>Caixa de Alertas</h2>
+            <p class="alert-text"><strong>ALERTA MÁXIMO (1):</strong> Sua ausência não autorizada excedeu 72 horas. Protocolos de contenção de dados foram iniciados. Reporte-se ao seu superior imediatamente.</p>
+            <p class="urgent-text"><strong>MENSAGEM (URGENTE) de Diretor Executivo:</strong> Assunto: Re: Suas Objeções ao Protocolo Harmonia.</p>
+        </div>
+
+        <div class="section" id="projects">
+            <h2>Resumo dos Projetos e Experimentos</h2>
+            
+            <h3>PROJETO-MESTRE: "Projeto Lótus" - Fase III</h3>
+            <p><strong>Objetivo Oficial:</strong> Erradicar a volatilidade emocional (amor, luto, raiva impulsiva) para otimizar o potencial humano e criar uma sociedade baseada na "Harmonia Lógica".</p>
+            <p><strong>Unidade Responsável:</strong> Laboratório de Neuro-modulação Cognitiva, operando sob a fachada do Retiro Serenitas.</p>
+
+            <h3>EXPERIMENTO ATIVO: "Protocolo Harmonia"</h3>
+            <p><strong>Descrição:</strong> Protocolo multifacetado para a neutralização de laços afetivos primários em sujeitos humanos. O objetivo é substituir o amor romântico e familiar por um estado de "eficiência relacional" e contentamento lógico.</p>
+            
+            <h4>Componentes do Experimento:</h4>
+            <ul>
+                <li><strong>O "Silenciador" (Módulo de Indução Sônica):</strong> Em testes no Laboratório Acústico Sub-Harmônico. Utiliza frequências inaudíveis constantes para inibir a atividade do sistema límbico, reduzindo a capacidade de sentir empatia profunda. O som que o Dr. Vance mencionou em seu diário.</li>
+                <li><strong>O "Composto Serenitas-7":</strong> Desenvolvido no Laboratório de Bioquímica Sintética. Uma substância psicoativa em aerossol (a "névoa") que suprime a produção de ocitocina e vasopressina, os "hormônios do vínculo". O Dr. Vance foi o principal arquiteto deste composto.</li>
+                <li><strong>"Alinhamento Cognitivo":</strong> Sessões de terapia e meditação guiada que reprogramam as vias neurais para que o cérebro passe a interpretar o amor como uma "dependência cognitiva irracional e ineficiente".</li>
+            </ul>
+        </div>
+        
+        <div class="section" id="status">
+            <h2>Status e Resultados</h2>
+            <p><strong>Último Relatório (anexado como log_casal12.pdf):</strong> Sucesso de 94% na neutralização de laços afetivos em sujeitos de teste após o ciclo completo de 14 dias. Os sujeitos descrevem seus parceiros com termos lógicos ("ativo valioso", "parceria otimizada"), conforme o esperado. O aumento médio de produtividade e foco foi de 48%.</p>
+        </div>
+        
+        <div class="section" id="files">
+            <h2>Notas de Pesquisa do Dr. Vance</h2>
+            <ul class="file-list">
+                <li>log_casal12.pdf</li>
+                <li>relatorio_serenitas7_composicao.docx</li>
+                <li class="alert-file">NOTAS_PESSOAIS_EVANCE_CRIPTOGRAFADO.bak</li>
+                <li>dados_inducao_sonica_rev2.dat</li>
+                <li class="alert-file">
+                    <span>ALERTA_DESVIO_ETICO_PROTOCOLOHARMONIA.txt</span>
+                    <span class="system-comment">As objeções morais levantadas pelo Dr. Vance sobre o 'assassinato da alma' foram consideradas uma anomalia emocional e um sintoma de falha em sua própria harmonização. Ele foi reclassificado como uma 'variável de risco' para o projeto.</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
